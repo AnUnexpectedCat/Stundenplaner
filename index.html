@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Stundenplan Builder WS 2026/27</title>
+<link href="gestaltung.css" rel="stylesheet">
+<script defer src="script.js"></script>
+</head>
+
+<body>
+<header>
+  <div>
+    <h1>Stundenplan Builder</h1>
+    <p>Wintersemester 2026/27 · Fächer auswählen, Plan entsteht automatisch</p>
+  </div>
+  <div class="stats">
+    <span class="pill" id="countPill">0 Veranstaltungen</span>
+    <span class="pill" id="swsPill">0 SWS</span>
+    <span class="pill" id="ectsPill" title="Nur Module mit hinterlegten ECTS werden gezählt. ECTS pro Modul in MODULE_ECTS im Code pflegen.">0 ECTS</span>
+    <button id="clearBtn" hidden>Alles abwählen</button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="panel controls">
+      <input id="search" type="text" placeholder="Suchen: Fach, Dozent, Raum, Kürzel …" />
+      <div class="row">
+        <select id="selStudiengang"></select>
+        <select id="selBereich"></select>
+      </div>
+      <p class="hint" id="resultCount"></p>
+    </div>
+    <div class="panel" id="courseList"></div>
+  </aside>
+
+  <main>
+    <div class="grid-wrap"><div class="grid" id="grid"></div></div>
+    <div class="special" id="specialBox" hidden>
+      <h2>Blockwochen / Termine ohne feste Wochenzeit</h2>
+      <div class="tags" id="specialTags"></div>
+    </div>
+    <p class="placeholder" id="placeholder">
+      Noch nichts ausgewählt – links Fächer ankreuzen, dann erscheinen sie automatisch im Plan.
+    </p>
+  </main>
+</div>
+
+</body>

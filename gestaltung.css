@@ -1,0 +1,97 @@
+
+  :root { font-family: system-ui, sans-serif; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f1f5f9; color: #0f172a; }
+
+  header {
+    background: #0f172a; color: #fff; padding: 14px 24px;
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between;
+  }
+  header h1 { font-size: 1.2rem; letter-spacing: -0.02em; }
+  header p { font-size: 0.75rem; color: #cbd5e1; }
+  .stats { display: flex; gap: 8px; align-items: center; font-size: 0.8rem; }
+  .pill { background: #334155; border-radius: 999px; padding: 4px 12px; }
+  #clearBtn {
+    background: #e11d48; color: #fff; border: none; border-radius: 999px;
+    padding: 5px 12px; font-size: 0.75rem; cursor: pointer;
+  }
+  #clearBtn:hover { background: #f43f5e; }
+
+  .layout { display: flex; gap: 16px; padding: 16px; flex-wrap: wrap; align-items: flex-start; }
+
+  /* ---------- Sidebar ---------- */
+  aside { width: 360px; flex-shrink: 0; display: flex; flex-direction: column; gap: 12px; }
+  .panel { background: #fff; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .controls { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+  #search {
+    width: 100%; border: 1px solid #cbd5e1; border-radius: 8px;
+    padding: 8px 12px; font-size: 0.9rem; outline: none;
+  }
+  #search:focus { border-color: #0f172a; }
+  .controls .row { display: flex; gap: 8px; }
+  select {
+    flex: 1; border: 1px solid #cbd5e1; border-radius: 8px;
+    padding: 6px; font-size: 0.75rem; background: #fff;
+  }
+  .hint { font-size: 0.7rem; color: #64748b; }
+
+  #courseList { max-height: 68vh; overflow-y: auto; }
+  .course-item {
+    display: flex; gap: 8px; width: 100%; text-align: left; padding: 10px 12px;
+    background: none; border: none; border-bottom: 1px solid #f1f5f9; cursor: pointer;
+    font-family: inherit; align-items: flex-start;
+  }
+  .course-item:hover { background: #f8fafc; }
+  .course-item.selected { background: #ecfdf5; }
+  .checkbox {
+    width: 16px; height: 16px; min-width: 16px; margin-top: 2px; border: 1px solid #94a3b8;
+    border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 11px;
+  }
+  .course-item.selected .checkbox { background: #059669; border-color: #059669; }
+  .ci-name { font-size: 0.85rem; font-weight: 600; }
+  .ci-meta { font-size: 0.7rem; color: #64748b; }
+  .ci-sub { font-size: 0.65rem; color: #94a3b8; }
+  .empty { padding: 24px; text-align: center; color: #94a3b8; font-size: 0.85rem; }
+
+  /* ---------- Timetable ---------- */
+  main { flex: 1; min-width: 320px; }
+  .grid-wrap { background: #fff; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,.08); padding: 12px; overflow-x: auto; }
+  .grid { min-width: 680px; }
+  .grid-head { display: flex; margin-bottom: 4px; }
+  .grid-head .time-col { width: 48px; flex-shrink: 0; }
+  .grid-head .day {
+    flex: 1; text-align: center; font-size: 0.75rem; font-weight: 700; padding: 4px 0;
+  }
+  .grid-body { display: flex; position: relative; }
+  .time-col { width: 48px; flex-shrink: 0; position: relative; }
+  .hour-label {
+    position: absolute; right: 4px; transform: translateY(-50%);
+    font-size: 0.65rem; color: #94a3b8;
+  }
+  .day-col { flex: 1; border-left: 1px solid #e2e8f0; position: relative; }
+  .hour-line { position: absolute; left: 0; right: 0; border-top: 1px solid #e2e8f0; }
+  .hour-line.half { border-top: 1px dashed #e8edf3; }
+
+  .block {
+    position: absolute; padding: 4px 4px 0 4px; overflow: hidden;
+  }
+  .block-inner {
+    height: 100%; border-radius: 8px; padding: 6px; color: #fff; font-size: 0.7rem;
+    line-height: 1.25; cursor: pointer; display: flex; flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0,0,0,.15);
+  }
+  .block-inner:hover { opacity: .9; }
+  .b-name { font-weight: 700; font-size: 0.72rem; margin-bottom: 2px; }
+  .b-meta { margin-top: auto; opacity: .9; font-size: 0.65rem; }
+
+  .special { margin-top: 16px; background: #fff; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,.08); padding: 12px; }
+  .special h2 { font-size: 0.85rem; margin-bottom: 8px; color: #334155; }
+  .special .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .special-tag {
+    background: #64748b; color: #fff; border: none; border-radius: 8px; cursor: pointer;
+    padding: 8px 12px; font-size: 0.7rem; text-align: left; font-family: inherit;
+  }
+  .special-tag:hover { background: #475569; }
+  .placeholder { margin-top: 16px; text-align: center; color: #94a3b8; font-size: 0.85rem; }
+
