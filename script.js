@@ -5,7 +5,7 @@
 // ============================================================
 // Google Sheets: Die ID steht in der URL des Sheets:
 // https://docs.google.com/spreadsheets/d/<DIESE_ID_HIER>/edit
-const SHEET_ID = "HIER_SHEET_ID_EINTRAGEN";
+const SHEET_ID = "n85p31XI20IxhgmjMfb41r1_DwiEJtwXV8PjZ-g6rqc";
 // Name des Tabellenblatts (steht unten an den Tabs, Standard: "Tabellenblatt1")
 const SHEET_NAME = "Tabellenblatt1";
 
@@ -50,7 +50,7 @@ const MODULE_ECTS = {
 // 2) DATEN LADEN & PARSEN
 // ============================================================
 async function loadCourses() {
-  const url = "https://docs.google.com/spreadsheets/d/" + 1n85p31XI20IxhgmjMfb41r1_DwiEJtwXV8PjZ-g6rqc +
+  const url = "https://docs.google.com/spreadsheets/d/" + SHEET_ID +
     "/gviz/tq?tqx=out:csv&sheet=" + encodeURIComponent(SHEET_NAME);
   const res = await fetch(url);
   if (!res.ok) throw new Error("HTTP-Fehler " + res.status);
