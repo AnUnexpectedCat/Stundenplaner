@@ -51,7 +51,7 @@ const MODULE_ECTS = {
 // ============================================================
 async function loadCourses() {
   const url = "https://docs.google.com/spreadsheets/d/" + 1n85p31XI20IxhgmjMfb41r1_DwiEJtwXV8PjZ-g6rqc +
-    "/gviz/tq?tqx=out:csv&sheet=" + encodeURIComponent(Stundenplan_Daten);
+    "/gviz/tq?tqx=out:csv&sheet=" + encodeURIComponent(SHEET_NAME);
   const res = await fetch(url);
   if (!res.ok) throw new Error("HTTP-Fehler " + res.status);
   return parseCsv(await res.text());
