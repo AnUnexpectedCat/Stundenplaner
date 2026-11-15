@@ -2,7 +2,7 @@
 Als ein Kursprojekt erstelle ich einen webbasierten Stundenplaner. Mit diesem soll es einfacher werden, seine gewünschten Kurse zu suchen nach unterschiedlichen Kategorien zu filtern und damit seinen Stundenplan zu erstellen.<br> <br>
 ! Noch in der Entwicklung.<br> 
 Bekannte Fehler: <br>
----
+X
 <img width="1917" height="970" alt="grafik" src="https://github.com/user-attachments/assets/e60500af-89e6-4a98-b09a-3e2226c3e9f7" />
 
 
