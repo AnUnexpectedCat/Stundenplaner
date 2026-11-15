@@ -297,6 +297,7 @@ function render() {
 async function init() {
   try {
     COURSES = parseCourses(await loadCourses());
+    console.log("Erster Kurs:", COURSES[0]);
   } catch (e) {
     document.getElementById("resultCount").textContent =
       "Fehler beim Laden der Daten: " + e.message +
