@@ -90,7 +90,7 @@ function parseCourses(rows) {
     const get = k => (c[idx[k]] || "").trim();
     const tag = get("tag");
     const zeit = get("zeit");
-    const day = DAYS.find(d => tag.toLowerCase().startsWith(d.toLowerCase())) || null;
+    const day = DAYS.includes(tag) ? tag : null;
     const t = day ? parseTime(zeit) : null;
     // Stabiler Schlüssel für die Speicherung der Auswahl:
     // Kürzel + Tag + Zeit + Raum (bleibt über Semester hinweg sinnvoll)
@@ -109,7 +109,9 @@ function parseCourses(rows) {
 }
 
 function parseTime(s) {
-  const m = s.match(/(\d{1,2}):.(?::\d{2})?\s*[–—-]+\s*(\d{1,2}):.(?::\d{2})?/);
+  // Verschiedene Stricharten (Gedankenstrich, Minuszeichen usw.) vereinheitlichen
+  s = String(s).replace(/[\u2010-\u2015\u2212\uFE58\uFF0D]/g, "-");
+  const m = s.match(/(\d{1,2})[:.](\d{2})(?::\d{2})?\s*-\s*(\d{1,2})[:.](\d{2})(?::\d{2})?/);
   if (!m) return null;
   return [parseInt(m[1], 10) * 60 + parseInt(m[2], 10),
           parseInt(m[3], 10) * 60 + parseInt(m[4], 10)];
